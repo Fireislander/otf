@@ -96,7 +96,7 @@ print("Total classes attended: "+str(memberDetaialsResponse_json['memberClassSum
 print("Total intro classes: "+str(memberDetaialsResponse_json['memberClassSummary']['totalIntro']))
 print("Total OT Live classes booked: "+str(memberDetaialsResponse_json['memberClassSummary']['totalOTLiveClassesBooked']))
 print("Total OT Live classes attended: "+str(memberDetaialsResponse_json['memberClassSummary']['totalOTLiveClassesAttended']))
-print("Total classes used HRM (Note: This may not include classes taken with a loaner HRM): "+str(memberDetaialsResponse_json['memberClassSummary']['totalClassesUsedHRM']))
+print("Total classes used HRM (Note: I have no idea why this doesn't match total classes attended): "+str(memberDetaialsResponse_json['memberClassSummary']['totalClassesUsedHRM']))
 print("Total studios visited: "+str(memberDetaialsResponse_json['memberClassSummary']['totalStudiosVisited']))
 print("Max HR: "+str(memberDetaialsResponse_json['maxHr']))
 
@@ -120,7 +120,6 @@ print("Orange: "+str(secsInZone['Orange']/dataClassCounter/60))
 print("Green: "+str(secsInZone['Green']/dataClassCounter/60))
 print("Blue: "+str(secsInZone['Blue']/dataClassCounter/60))
 print("Black: "+str(secsInZone['Black']/dataClassCounter/60))
-
 
 
 
