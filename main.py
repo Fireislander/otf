@@ -30,6 +30,8 @@ classTypeCounter = {}
 classesByCoach = {}
 
 for item in inStudioResponse_json['data']:
+    if item['classType'] == None:
+        item['classType'] = "No Class Type Found"
     if item['classType'] in classTypeCounter:
         classTypeCounter[item['classType']] = classTypeCounter[item['classType']] + 1
     else: classTypeCounter[item['classType']] = 1
@@ -120,6 +122,3 @@ print("Orange: "+str(secsInZone['Orange']/dataClassCounter/60))
 print("Green: "+str(secsInZone['Green']/dataClassCounter/60))
 print("Blue: "+str(secsInZone['Blue']/dataClassCounter/60))
 print("Black: "+str(secsInZone['Black']/dataClassCounter/60))
-
-
-
