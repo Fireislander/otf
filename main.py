@@ -20,7 +20,8 @@ token = json.loads(response.content)['AuthenticationResult']['IdToken']
 
 endpoint = "https://api.orangetheory.co/virtual-class/in-studio-workouts"
 data = {}
-header = {"Content-Type": "application/json", "Authorization": token}
+header = {"Content-Type": "application/json", "Authorization": token, "Connection": "keep-alive", "accept": "appliction/json", "accept-language": "en-US,en;q=0.9", "origin": "https://otlive.orangetheory.com", "referer": "https://otlive.orangetheory.com", "sec-ch-ua": '".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"', "sec-ch-ua-platform": '"macOS"', "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"}
+
 
 inStudioResponse = requests.get(endpoint, headers=header)
 
