@@ -6,17 +6,17 @@ A utility for pulling data from your Orange Theory account for better data analy
 * `python3 main.py`
 
 ### This script will currently display
-* # of classes by coach
+* \# of classes by coach
 * Breakdown of class types you have taken
 * Your home studio
-* # of classes booked
-* # of classes attended (including those without a HRM)
-* # of intro classes taken
-* # OT Live classes booked
-* # OT Live classes attended
-* # Total classes used HRM
-* # Total studios visited
-* # Max HR (what would show at 100% on the screen)
+* \# of classes booked
+* \# of classes attended (including those without a HRM)
+* \# of intro classes taken
+* \# OT Live classes booked
+* \# OT Live classes attended
+* \# Total classes used HRM
+* \# Total studios visited
+* \# Max HR (what would show at 100% on the screen)
 * Average Max HR across classes
 * Average HR across classes
 * Average splats
