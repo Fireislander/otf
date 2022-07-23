@@ -3,3 +3,4 @@ venv/
 otf.code-workspace
 .vscode/launch.json
 config.py
+data.csv
