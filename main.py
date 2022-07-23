@@ -27,6 +27,7 @@ except Exception as e:
 
 token = json.loads(response.content)['AuthenticationResult']['IdToken']
 
+<<<<<<< HEAD
 # Get data
 endpoint = 'https://api.orangetheory.co/virtual-class/in-studio-workouts'
 headers = {
@@ -40,6 +41,12 @@ try:
 except Exception as e:
     print(str(e))
     sys.exit()
+=======
+endpoint = "https://api.orangetheory.co/virtual-class/in-studio-workouts"
+data = {}
+header = {"Content-Type": "application/json", "Authorization": token, "Connection": "keep-alive", "accept": "appliction/json", "accept-language": "en-US,en;q=0.9", "origin": "https://otlive.orangetheory.com", "referer": "https://otlive.orangetheory.com", "sec-ch-ua": '".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"', "sec-ch-ua-platform": '"macOS"', "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"}
+
+>>>>>>> ca9c9ea85fcc77ed93393e1584cc540f7c73cfd5
 
 # Get the data into a DataFrame so that we can easily analyze it
 df = pd.DataFrame.from_dict(json.loads(response.content)['data'])
