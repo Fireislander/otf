@@ -1,5 +1,9 @@
+"""
+Create a config.py file and specify OTF_CLIENT_ID, EMAIL, and PASSWORD
+"""
 import config
 from otf_user_data import OTFUserData
+
 ################
 # MAIN PROGRAM #
 ################
