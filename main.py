@@ -36,7 +36,8 @@ for item in inStudioResponse_json['data']:
     if item['classType'] in classTypeCounter:
         classTypeCounter[item['classType']] = classTypeCounter[item['classType']] + 1
     else: classTypeCounter[item['classType']] = 1
-    studioCoach = item['coach']+"- "+item['studioName']
+    studioCoach = (item['coach'] if 'coach' in item and item['coach'] is not None else "NoCoach") + \
+        "- " + (item['studioName'] if 'studioName' in item and item['studioName'] is not None else "NoStudio")
     if studioCoach in classesByCoach:
         classesByCoach[studioCoach] = classesByCoach[studioCoach] + 1
     else:
@@ -71,16 +72,17 @@ averageCaloriesTotal = 0
 for workout in inStudioResponse_json['data']:
     dataClassCounter = dataClassCounter + 1
     count = 1
-    for hr in workout['minuteByMinuteHr'].split("[")[1].split("]")[0].split(","):
-        if count in hrTotals:
-            hrTotals[count] = int(hrTotals[count]) + int(hr)
-        else:
-            hrTotals[count] = int(hr)
-        if count in minCount:
-            minCount[count] = minCount[count] + 1
-        else:
-            minCount[count] = 1
-        count = count + 1
+    if 'minuteByMinuteHr' in workout and workout['minuteByMinuteHr'] is not None:
+        for hr in workout['minuteByMinuteHr'].split("[")[1].split("]")[0].split(","):
+            if count in hrTotals:
+                hrTotals[count] = int(hrTotals[count]) + int(hr)
+            else:
+                hrTotals[count] = int(hr)
+            if count in minCount:
+                minCount[count] = minCount[count] + 1
+            else:
+                minCount[count] = 1
+            count = count + 1
     secsInZone['Red'] = secsInZone['Red'] +workout['redZoneTimeSecond']
     secsInZone['Orange'] = secsInZone['Orange'] + workout['orangeZoneTimeSecond']
     secsInZone['Green'] = secsInZone['Green'] + workout['greenZoneTimeSecond']
